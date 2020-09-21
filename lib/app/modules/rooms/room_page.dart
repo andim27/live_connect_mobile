@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import 'package:ayas_mobile/app/modules/rooms/room_controller.dart';
 import 'package:chewie/chewie.dart';
@@ -46,6 +47,25 @@ class _RoomPageState extends State<RoomPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  Container(
+                      height: 100,
+                      padding: EdgeInsets.all(10),
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: [
+                          for (var item in ctl.activeStreamUsers)
+                            Padding(
+                              padding: const EdgeInsets.only(right: 10),
+                              child: CircleAvatar(
+                                  radius: 35,
+                                  backgroundColor: Colors.purpleAccent,
+                                  child: Text(
+                                    item['name'],
+                                    style: TextStyle(fontSize: 12),
+                                  )),
+                            ),
+                        ],
+                      )),
                   Expanded(
                     child: Center(
                       child: Chewie(

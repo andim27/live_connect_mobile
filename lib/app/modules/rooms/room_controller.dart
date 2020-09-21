@@ -21,10 +21,14 @@ class RoomController extends GetxController {
   get videoPlayerController2 => this._videoPlayerController2.value;
   get chewieController => this._chewieController.value;
 
+  Rx<List> _activeStreamUsers = Rx<List>();
+  get activeStreamUsers => this._activeStreamUsers.value;
+
   @override
   void onInit() {
     super.onInit();
     initVideoControllers();
+    getActiveStreamUsers();
   }
 
   initVideoControllers() {
@@ -57,5 +61,20 @@ class RoomController extends GetxController {
 
   backPage() {
     Get.back();
+  }
+
+  getActiveStreamUsers() {
+    _activeStreamUsers.value = [
+      {'name': 'user-1'},
+      {'name': 'user-2'},
+      {'name': 'user-3'},
+      {'name': 'user-4'},
+      {'name': 'user-5'},
+      {'name': 'user-6'},
+      {'name': 'user-7'},
+      {'name': 'user-8'},
+      {'name': 'user-9'},
+      {'name': 'user-10'}
+    ];
   }
 }
