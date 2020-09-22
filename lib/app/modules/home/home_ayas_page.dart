@@ -3,11 +3,11 @@ import 'package:ayas_mobile/app/ui/app_colors.dart';
 import 'package:ayas_mobile/app/modules/home/home_feed.dart';
 import 'package:ayas_mobile/app/modules/home/widgets/title_text.dart';
 
-class HomeAyasScreen extends StatefulWidget {
-  HomeAyasScreen({Key key}) : super(key: key);
+class HomeAyasPage extends StatefulWidget {
+  HomeAyasPage({Key key}) : super(key: key);
 
   @override
-  _HomeAyasScreenState createState() => _HomeAyasScreenState();
+  _HomeAyasPageState createState() => _HomeAyasPageState();
 }
 
 Widget _icon(IconData icon, {Color color = ColorBranding.orangeLight, Color bgColor}) {
@@ -47,7 +47,7 @@ Widget _appBarWidget() {
 
 void setState(Null Function() param0) {}
 
-class _HomeAyasScreenState extends State<HomeAyasScreen> {
+class _HomeAyasPageState extends State<HomeAyasPage> {
   @override
   Widget build(BuildContext context) {
     return Material(

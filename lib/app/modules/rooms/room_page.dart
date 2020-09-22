@@ -6,6 +6,8 @@ import 'package:chewie/chewie.dart';
 import 'package:chewie/src/chewie_player.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:video_player/video_player.dart';
+import 'package:ayas_mobile/app/ui/app_colors.dart';
+import 'package:ayas_mobile/app/modules/home/widgets/title_text.dart';
 
 class RoomPage extends StatefulWidget {
   RoomPage({this.title = 'AYAS demo'});
@@ -28,20 +30,23 @@ class _RoomPageState extends State<RoomPage> {
     super.initState();
   }
 
-  @override
-  void dispose() {
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
     var chController = ctl.chewieController;
     return Scaffold(
-      appBar: AppBar(title: Center(child: Text(' AYAS '))),
+      appBar: AppBar(
+        title: Center(child: Text(' AYAS ')),
+        backgroundColor: ColorBranding.purpleDarkest,
+      ),
       body: Container(
           width: double.infinity,
           height: double.infinity,
-          color: Colors.white,
+          color: ColorBranding.purpleDark,
           child: Center(
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -86,6 +91,7 @@ class _RoomPageState extends State<RoomPage> {
                     onPressed: () {
                       ctl.openLiveRoom();
                     },
+                    color: Colors.white,
                     child: Text('Live Room'),
                   ),
                   Row(
@@ -98,7 +104,7 @@ class _RoomPageState extends State<RoomPage> {
                             });
                           },
                           child: Padding(
-                            child: Text("Room-1"),
+                            child: Text("Room-1", style: TextStyle(color: Colors.white)),
                             padding: EdgeInsets.symmetric(vertical: 16.0),
                           ),
                         ),
@@ -112,7 +118,7 @@ class _RoomPageState extends State<RoomPage> {
                           },
                           child: Padding(
                             padding: EdgeInsets.symmetric(vertical: 16.0),
-                            child: Text("Room-2"),
+                            child: Text("Room-2", style: TextStyle(color: Colors.white)),
                           ),
                         ),
                       )

@@ -1,3 +1,4 @@
+import 'package:get/get.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:ayas_mobile/app/ui/app_colors.dart';
@@ -7,6 +8,7 @@ import 'package:ayas_mobile/app/modules/home/widgets/extensions.dart';
 import 'package:ayas_mobile/app/modules/home/widgets/hot_room_widget.dart';
 import 'package:ayas_mobile/app/modules/home/widgets/movie_card.dart';
 import 'package:ayas_mobile/app/modules/home/widgets/title_text.dart';
+import 'package:ayas_mobile/app/modules/rooms/room_page.dart';
 
 class HomeFeed extends StatefulWidget {
   HomeFeed({Key key, this.title}) : super(key: key);
@@ -121,16 +123,19 @@ class _HomeFeedState extends State<HomeFeed> {
         scrollDirection: Axis.horizontal,
         children: FakeData.movieList
             .map(
-              (movie) => MovieCard(
-                movie: movie,
-                onSelected: (model) {
-                  setState(() {
-                    FakeData.movieList.forEach((item) {
-                      item.isSelected = false;
+              (movie) => InkWell(
+                onTap: () => Get.to(RoomPage()),
+                child: MovieCard(
+                  movie: movie,
+                  onSelected: (model) {
+                    setState(() {
+                      FakeData.movieList.forEach((item) {
+                        item.isSelected = false;
+                      });
+                      model.isSelected = true;
                     });
-                    model.isSelected = true;
-                  });
-                },
+                  },
+                ),
               ),
             )
             .toList(),
@@ -152,16 +157,19 @@ class _HomeFeedState extends State<HomeFeed> {
         scrollDirection: Axis.horizontal,
         children: FakeData.movieList
             .map(
-              (movie) => HotRoomWidget(
-                movie: movie,
-                onSelected: (model) {
-                  setState(() {
-                    FakeData.movieList.forEach((item) {
-                      item.isSelected = false;
+              (movie) => InkWell(
+                onTap: () => Get.to(RoomPage()),
+                child: HotRoomWidget(
+                  movie: movie,
+                  onSelected: (model) {
+                    setState(() {
+                      FakeData.movieList.forEach((item) {
+                        item.isSelected = false;
+                      });
+                      model.isSelected = true;
                     });
-                    model.isSelected = true;
-                  });
-                },
+                  },
+                ),
               ),
             )
             .toList(),
