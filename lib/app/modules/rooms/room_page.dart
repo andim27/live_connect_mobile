@@ -50,26 +50,27 @@ class _RoomPageState extends State<RoomPage> {
                   Container(
                       height: 100,
                       padding: EdgeInsets.all(10),
-                      child: ListView(
-                        scrollDirection: Axis.horizontal,
-                        children: [
-                          for (var item in ctl.activeStreamUsers)
-                            Padding(
-                              padding: const EdgeInsets.only(right: 10),
-                              child: CircleAvatar(
-                                  radius: 35,
-                                  backgroundColor: Colors.purpleAccent,
-                                  child: Text(
-                                    item['name'],
-                                    style: TextStyle(fontSize: 12),
-                                  )),
-                            ),
-                        ],
-                      )),
+                      child: Obx(() => ListView(
+                            scrollDirection: Axis.horizontal,
+                            children: [
+                              for (var item in ctl.activeStreamUsers)
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 10),
+                                  child: CircleAvatar(
+                                      radius: 35,
+                                      backgroundColor: Colors.purpleAccent,
+                                      child: Text(
+                                        item['name'],
+                                        style: TextStyle(fontSize: 12),
+                                      )),
+                                ),
+                            ],
+                          ))),
                   Obx(() => (ctl.isLiveRoom == true)
                       ? Expanded(
                           child: Center(
                               child: Container(
+                                  //--TODO: replace on Zoom container
                                   width: Get.width,
                                   height: 300,
                                   color: Colors.lightGreenAccent,

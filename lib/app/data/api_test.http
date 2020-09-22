@@ -1,0 +1,38 @@
+@baseUrl = http://35.198.180.32
+@authToken = Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MDA2ODY3MDcsIm5iZiI6MTYwMDY4NjcwNywianRpIjoiN2QyYjMyYTctOGM5Yi00YmQyLWI0NmQtZWVjMjBiNmYzZDE3IiwiZXhwIjoxNjAxMjkxNTA3LCJpZGVudGl0eSI6IjEiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.MMKxN-7DS3FXFQqeNQg0SZbgaHREDVm-CpYY1ghG-vg
+
+###------------------------------ createNewStreamRoom----------------
+
+POST {{baseUrl}}/api/stream-rooms HTTP/1.1
+Authorization: {{authToken}}
+Content-Type: application/json
+
+{
+   "stream_src": "room-1"  
+}
+###------------------------------- joinStreamRoom--------------------
+
+
+# @name JoinStreamRoom
+
+PATCH {{baseUrl}}/api/stream-rooms/2 HTTP/1.1
+Authorization: {{authToken}}
+Content-Type: application/json
+
+{
+    "watch": "true"
+}
+
+### ----------------------------- getUserInfo-------------------
+
+# @authToken = {{login.response.headers.X-AuthToken}}
+
+# @name getUserInfo
+@authToken = Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MDA2ODY3MDcsIm5iZiI6MTYwMDY4NjcwNywianRpIjoiN2QyYjMyYTctOGM5Yi00YmQyLWI0NmQtZWVjMjBiNmYzZDE3IiwiZXhwIjoxNjAxMjkxNTA3LCJpZGVudGl0eSI6IjEiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.MMKxN-7DS3FXFQqeNQg0SZbgaHREDVm-CpYY1ghG-vg
+
+POST {{baseUrl}}/api/users HTTP/1.1
+Authorization: {{authToken}}
+# Content-Type: application/json
+
+
+###

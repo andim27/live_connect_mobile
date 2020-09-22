@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:ayas_mobile/app/routes/app_routes.dart';
 import 'package:ayas_mobile/app/modules/home/home_page.dart';
+import 'package:ayas_mobile/app/modules/home/home_ayas_page.dart';
 
 void main() async {
   await GetStorage.init();
@@ -14,6 +15,7 @@ void main() async {
     //theme: appThemeData,
     defaultTransition: Transition.fadeIn,
     getPages: AppPages.pages,
-    home: HomePage(),
+    //home: HomePage(),
+    home: HomeAyasScreen(),
   ));
 }
