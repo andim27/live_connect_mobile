@@ -66,18 +66,26 @@ class _RoomPageState extends State<RoomPage> {
                             ),
                         ],
                       )),
-                  Expanded(
-                    child: Center(
-                      child: Chewie(
-                        controller: chController,
-                      ),
-                    ),
-                  ),
+                  Obx(() => (ctl.isLiveRoom == true)
+                      ? Expanded(
+                          child: Center(
+                              child: Container(
+                                  width: Get.width,
+                                  height: 300,
+                                  color: Colors.lightGreenAccent,
+                                  child: Center(child: Text('Live stream')))))
+                      : Expanded(
+                          child: Center(
+                            child: Chewie(
+                              controller: chController,
+                            ),
+                          ),
+                        )),
                   FlatButton(
                     onPressed: () {
-                      ctl.playFullScreen();
+                      ctl.openLiveRoom();
                     },
-                    child: Text('Fullscreen'),
+                    child: Text('Live Room'),
                   ),
                   Row(
                     children: <Widget>[

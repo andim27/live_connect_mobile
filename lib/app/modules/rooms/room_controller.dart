@@ -24,6 +24,9 @@ class RoomController extends GetxController {
   Rx<List> _activeStreamUsers = Rx<List>();
   get activeStreamUsers => this._activeStreamUsers.value;
 
+  var _isLiveRoom = false.obs;
+  get isLiveRoom => this._isLiveRoom.value;
+
   @override
   void onInit() {
     super.onInit();
@@ -59,11 +62,17 @@ class RoomController extends GetxController {
     this._chewieController.value.enterFullScreen();
   }
 
+  openLiveRoom() {
+    this._isLiveRoom.value = !this._isLiveRoom.value;
+  }
+
   backPage() {
     Get.back();
   }
 
   getActiveStreamUsers() {
+    //--call api--
+
     _activeStreamUsers.value = [
       {'name': 'user-1'},
       {'name': 'user-2'},
