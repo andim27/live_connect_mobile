@@ -40,6 +40,7 @@ class _RoomPageState extends State<RoomPage> {
     var chController = ctl.chewieController;
     return Scaffold(
       appBar: AppBar(
+        leading: new IconButton(icon: new Icon(Icons.arrow_back), onPressed: () => ctl.backPage()),
         title: Center(child: Text(' AYAS ')),
         backgroundColor: ColorBranding.purpleDarkest,
       ),

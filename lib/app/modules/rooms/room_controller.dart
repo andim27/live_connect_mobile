@@ -67,6 +67,8 @@ class RoomController extends GetxController {
   }
 
   backPage() {
+    this._chewieController.value.dispose();
+    this._videoPlayerController2.value.pause();
     Get.back();
   }
 
