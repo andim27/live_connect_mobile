@@ -8,14 +8,27 @@ Authorization: {{authToken}}
 Content-Type: application/json
 
 {
-   "stream_src": "room-1"  
+   "stream_src": "room-11"  
 }
+
+##--------------------------getStreamRooms for current user----------
+# @name test@test.com
+@authToken = Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MDA5NDE3NjMsIm5iZiI6MTYwMDk0MTc2MywianRpIjoiM2RhOWZlN2QtNjBkMS00MWNhLWJkZWYtNzZiMjA1ZTQ2MmVkIiwiZXhwIjoxNjAxNTQ2NTYzLCJpZGVudGl0eSI6IjQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.ryPT8-7a1whEM3fGRSilG1yUEFx3DfjkQUaW024nilQ
+
+GET {{baseUrl}}/api/stream-rooms HTTP/1.1
+Authorization: {{authToken}}
+Content-Type: application/json
+{
+
+}
+
 ###------------------------------- joinStreamRoom--------------------
 
 
-# @name JoinStreamRoom
+# @name test@test.com
+@authToken = Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MDA5NDE3NjMsIm5iZiI6MTYwMDk0MTc2MywianRpIjoiM2RhOWZlN2QtNjBkMS00MWNhLWJkZWYtNzZiMjA1ZTQ2MmVkIiwiZXhwIjoxNjAxNTQ2NTYzLCJpZGVudGl0eSI6IjQiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.ryPT8-7a1whEM3fGRSilG1yUEFx3DfjkQUaW024nilQ
 
-PATCH {{baseUrl}}/api/stream-rooms/2 HTTP/1.1
+PATCH {{baseUrl}}/api/stream-rooms/1 HTTP/1.1
 Authorization: {{authToken}}
 Content-Type: application/json
 
@@ -36,3 +49,46 @@ Authorization: {{authToken}}
 
 
 ###
+
+###---------------------------register user -------------------
+@user_email = "ackmatoff@gmail.com"
+@user_psw = "password123"
+POST {{baseUrl}}/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": {{user_email}},
+    "password": {{user_psw}}
+}
+
+###-----------------------get user info ------------------
+GET {{baseUrl}}/api/users/1 HTTP/1.1
+Authorization: {{authToken}}
+
+###-----------------------get JWT tokek for user----------
+POST {{baseUrl}}/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": {{user_email}},
+    "password": {{user_psw}}
+}
+
+###---------------- Session - get user token------------------------
+###@user_email = "test@test.com"
+#@user_psw = "password123"
+@user_email = "a2772.am@gmail.com"
+
+@user_psw = "video123"
+POST {{baseUrl}}/api/sessions HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": {{user_email}},
+    "password": {{user_psw}}
+}
+
+
+###----------------------- get Zoom JWT ----------
+GET {{baseUrl}}/api/zoom-jwt HTTP/1.1
+Authorization: {{authToken}}

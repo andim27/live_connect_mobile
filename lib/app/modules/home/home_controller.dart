@@ -15,4 +15,20 @@ class HomeController extends GetxController {
   openRoomPage() {
     Get.toNamed(Routes.ROOM);
   }
+
+  openLiveZoomPage() {
+    Get.toNamed(Routes.LIVEZOOMPAGE);
+  }
+
+  openJoinMeeting() {
+    Get.toNamed(Routes.JOINMEETING);
+  }
+
+  openMeetingRoom() {
+    Get.toNamed(Routes.MEETINGROOM);
+  }
+
+  openStartMeeting() {
+    Get.toNamed(Routes.STARTMEETING);
+  }
 }

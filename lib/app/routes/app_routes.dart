@@ -10,6 +10,10 @@ abstract class Routes {
   static const LOGIN = '/login';
   static const ROOM = '/room';
   static const ABOUT = '/about';
+  static const LIVEZOOMPAGE = '/live_page_zoom';
+  static const JOINMEETING = '/join_room';
+  static const STARTMEETING = '/start_meeting';
+  static const MEETINGROOM = '/meeting_room';
 }
 
 abstract class AppPages {
@@ -18,5 +22,18 @@ abstract class AppPages {
     GetPage(name: Routes.HOME_AYAS, page: () => HomeAyasPage()),
     GetPage(name: Routes.ABOUT, page: () => AboutPage()),
     GetPage(name: Routes.ROOM, page: () => RoomPage()),
+    GetPage(name: Routes.LIVEZOOMPAGE, page: () => LivePageZoom()),
+    // GetPage(name: Routes.JOINMEETING, page: () => JoinZoom()),
+    // GetPage(
+    //     name: Routes.STARTMEETING,
+    //     page: () => StartMeeting(
+    //           meetingId: "12345678",
+    //         )),
+    // GetPage(
+    //     name: Routes.MEETINGROOM,
+    //     page: () => MeetingRoom(
+    //           meetingId: "12345678",
+    //           meetingPassword: "12345678",
+    //         )),
   ];
 }
