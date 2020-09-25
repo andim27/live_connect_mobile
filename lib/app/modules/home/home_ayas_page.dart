@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:ayas_mobile/app/ui/app_colors.dart';
 import 'package:ayas_mobile/app/modules/home/home_feed.dart';
 import 'package:ayas_mobile/app/modules/home/widgets/title_text.dart';
+import 'package:ayas_mobile/app/modules/home/home_controller.dart';
 
 class HomeAyasPage extends StatefulWidget {
   HomeAyasPage({Key key}) : super(key: key);
@@ -24,7 +27,7 @@ Widget _icon(IconData icon, {Color color = ColorBranding.orangeLight, Color bgCo
   );
 }
 
-Widget _appBarWidget() {
+Widget _appBarWidget(HomeController ctl) {
   return Container(
     padding: EdgeInsets.all(10.0),
     child: Row(
@@ -39,15 +42,30 @@ Widget _appBarWidget() {
           fontSize: 62,
           fontWeight: FontWeight.w400,
         ),
-        _icon(Icons.account_circle, color: ColorBranding.white, bgColor: ColorBranding.purpleLighter),
+        _registerButton(ctl),
+        //_icon(Icons.account_circle, color: ColorBranding.white, bgColor: ColorBranding.purpleLighter),
       ],
     ),
   );
 }
 
+Widget _registerButton(HomeController ctl) {
+  return FlatButton(
+      child: Text(
+        "Register",
+        style: GoogleFonts.abel(
+          fontSize: 14,
+          color: ColorBranding.white,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+      onPressed: () => ctl.openSignUpPage());
+}
+
 void setState(Null Function() param0) {}
 
 class _HomeAyasPageState extends State<HomeAyasPage> {
+  HomeController ctl = Get.put(HomeController());
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -73,7 +91,7 @@ class _HomeAyasPageState extends State<HomeAyasPage> {
               SingleChildScrollView(
                 child: Column(
                   children: [
-                    _appBarWidget(),
+                    _appBarWidget(ctl),
                     HomeFeed(),
                   ],
                 ),

@@ -53,8 +53,10 @@ Authorization: {{authToken}}
 ###
 
 ###---------------------------register user -------------------
-@user_email = "ackmatoff@gmail.com"
-@user_psw = "password123"
+#@user_email = "ackmatoff@gmail.com"
+#@user_psw = "password123"
+@user_email = "testuser123@test.com"
+@user_psw = "test12345"
 POST {{baseUrl}}/api/users HTTP/1.1
 Content-Type: application/json
 

@@ -1,3 +1,4 @@
+import 'package:ayas_mobile/app/modules/auth/signup_page.dart';
 import 'package:flutter/material.dart';
 import 'package:ayas_mobile/app/routes/app_routes.dart';
 import 'package:get/get.dart';
@@ -30,5 +31,9 @@ class HomeController extends GetxController {
 
   openStartMeeting() {
     Get.toNamed(Routes.STARTMEETING);
+  }
+
+  openSignUpPage() {
+    Get.toNamed(Routes.SIGNUP);
   }
 }

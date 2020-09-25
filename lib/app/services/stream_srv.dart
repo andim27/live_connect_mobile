@@ -23,7 +23,7 @@ class StreamService {
       String curUserPassword = box.read('cur_user_password');
       var data = await ApiClient().registerStreamUser(curUserEmail, curUserPassword);
       if (data['id'] != null) {
-        print("---registerStreamUser:$data['id']");
+        print("---registerStreamUser cur_user_id=$data['id']");
         box.write('cur_user_id', data['id'].toString());
         return true;
       }

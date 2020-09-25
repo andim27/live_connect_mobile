@@ -3,11 +3,14 @@ import 'package:ayas_mobile/app/modules/home/home_page.dart';
 import 'package:ayas_mobile/app/modules/home/home_ayas_page.dart';
 import 'package:ayas_mobile/app/modules/about/about_page.dart';
 import 'package:ayas_mobile/app/modules/rooms/room_page.dart';
+import 'package:ayas_mobile/app/modules/auth/signup_page.dart';
+import 'package:ayas_mobile/app/modules/livePageZoom/live_page_zoom.dart';
 
 abstract class Routes {
   static const HOME = '/home';
   static const HOME_AYAS = '/home-ayas';
   static const LOGIN = '/login';
+  static const SIGNUP = '/signup';
   static const ROOM = '/room';
   static const ABOUT = '/about';
   static const LIVEZOOMPAGE = '/live_page_zoom';
@@ -20,6 +23,7 @@ abstract class AppPages {
   static final pages = [
     GetPage(name: Routes.HOME, page: () => HomePage()),
     GetPage(name: Routes.HOME_AYAS, page: () => HomeAyasPage()),
+    GetPage(name: Routes.SIGNUP, page: () => SignUpPage()),
     GetPage(name: Routes.ABOUT, page: () => AboutPage()),
     GetPage(name: Routes.ROOM, page: () => RoomPage()),
     GetPage(name: Routes.LIVEZOOMPAGE, page: () => LivePageZoom()),
