@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ayas_mobile/app/ui/app_colors.dart';
+import 'package:ayas_mobile/app/ui/app_texts.dart';
 import 'package:ayas_mobile/app/modules/home/home_feed.dart';
 import 'package:ayas_mobile/app/modules/home/widgets/title_text.dart';
 import 'package:ayas_mobile/app/modules/home/home_controller.dart';
@@ -42,7 +43,12 @@ Widget _appBarWidget(HomeController ctl) {
           fontSize: 62,
           fontWeight: FontWeight.w400,
         ),
-        _registerButton(ctl),
+        Obx(() => (ctl.isUserLogin)
+            ? Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [_logoutButton(ctl), SizedBox(width: 10), Text(ctl.curUserId, style: userTitleStyle)],
+              )
+            : _registerButton(ctl)),
         //_icon(Icons.account_circle, color: ColorBranding.white, bgColor: ColorBranding.purpleLighter),
       ],
     ),
@@ -51,6 +57,9 @@ Widget _appBarWidget(HomeController ctl) {
 
 Widget _registerButton(HomeController ctl) {
   return FlatButton(
+      shape: RoundedRectangleBorder(
+          side: BorderSide(color: ColorBranding.orange, width: 1, style: BorderStyle.solid),
+          borderRadius: BorderRadius.circular(20)),
       child: Text(
         "Register",
         style: GoogleFonts.abel(
@@ -60,6 +69,22 @@ Widget _registerButton(HomeController ctl) {
         ),
       ),
       onPressed: () => ctl.openSignUpPage());
+}
+
+Widget _logoutButton(HomeController ctl) {
+  return FlatButton(
+      shape: RoundedRectangleBorder(
+          side: BorderSide(color: ColorBranding.orange, width: 1, style: BorderStyle.solid),
+          borderRadius: BorderRadius.circular(20)),
+      child: Text(
+        "LogOut",
+        style: GoogleFonts.abel(
+          fontSize: 14,
+          color: ColorBranding.white,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+      onPressed: () => ctl.logoutUser());
 }
 
 void setState(Null Function() param0) {}

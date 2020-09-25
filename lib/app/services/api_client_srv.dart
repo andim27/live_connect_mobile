@@ -10,9 +10,9 @@ class ApiClient {
     return token;
   }
 
-  Future connectStreamRooms(int roomId, bool watch) async {
-    String apiPath = '/api/stream-rooms/';
-    String apiUrl = this.baseURL + apiPath + roomId.toString();
+  Future<Map<String, dynamic>> connectStreamRooms(int roomId, bool watch) async {
+    String apiPath = '/api/stream-rooms';
+    String apiUrl = this.baseURL + apiPath + '/' + roomId.toString();
     //--AUTH set:
     String curUserToken = getCurUserToken();
     Response response = await Dio().patch(apiUrl,
@@ -23,9 +23,9 @@ class ApiClient {
     return response.data;
   }
 
-  Future getStreamUsers(int roomId) async {
-    String apiPath = '/api/stream-rooms/';
-    String apiUrl = this.baseURL + apiPath + roomId.toString();
+  Future<Map<String, dynamic>> getStreamUsers(int roomId) async {
+    String apiPath = '/api/stream-rooms';
+    String apiUrl = this.baseURL + apiPath + '/' + roomId.toString();
     //--AUTH set:
     String curUserToken = getCurUserToken();
     Response response = await Dio().get(apiUrl,
@@ -35,16 +35,20 @@ class ApiClient {
     return response.data;
   }
 
-  Future getStreamRooms() async {
-    String apiPath = '/api/stream-rooms/';
+  Future<Map<String, dynamic>> getStreamRooms() async {
+    String apiPath = '/api/stream-rooms';
     String apiUrl = this.baseURL + apiPath;
     //--AUTH set:
-    Response response = await Dio().get(apiUrl);
+    String curUserToken = getCurUserToken();
+    Response response = await Dio().get(apiUrl,
+        options: Options(
+          headers: {"Authorization": "Bearer $curUserToken"},
+        ));
     return response.data;
   }
 
-  Future getStreamRoomById(int roomId) async {
-    String apiPath = '/api/stream-rooms/';
+  Future<Map<String, dynamic>> getStreamRoomById(int roomId) async {
+    String apiPath = '/api/stream-rooms';
     String apiUrl = this.baseURL + apiPath + roomId.toString();
     //--AUTH set:
     String curUserToken = getCurUserToken();
@@ -56,21 +60,21 @@ class ApiClient {
   }
 
   Future<Map<String, dynamic>> registerStreamUser(String email, String password) async {
-    String apiPath = '/api/users/';
+    String apiPath = '/api/users';
     String apiUrl = this.baseURL + apiPath;
     Response response = await Dio().post(apiUrl, data: {'email': email, 'password': password});
     return response.data;
   }
 
   Future<Map<String, dynamic>> getUserToken(String email, String password) async {
-    String apiPath = '/api/session/';
+    String apiPath = '/api/sessions';
     String apiUrl = this.baseURL + apiPath;
     Response response = await Dio().post(apiUrl, data: {'email': email, 'password': password});
     return response.data; //token
   }
 
   Future<Map<String, dynamic>> createStreamRoom(String streamSrc) async {
-    String apiPath = '/api/stream-rooms/';
+    String apiPath = '/api/stream-rooms';
     String apiUrl = this.baseURL + apiPath;
     //--AUTH set:
     String curUserToken = getCurUserToken();

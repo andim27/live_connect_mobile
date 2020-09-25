@@ -13,4 +13,5 @@ class ColorBranding {
   static const Color orangeDark = Color(0xffeb8097);
   static const Color orange = Color(0xfff59690);
   static const Color orangeLight = Color(0xffffa789);
+  static const Color green = Colors.green;
 }

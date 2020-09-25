@@ -88,4 +88,6 @@ class RoomController extends GetxController {
       {'name': 'user-10'}
     ];
   }
+
+  connectStreamRooms(int roomId) {}
 }

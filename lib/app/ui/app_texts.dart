@@ -12,3 +12,4 @@ final TextStyle titleNormalStyle = TextStyle(color: Colors.black, fontSize: 18, 
 final TextStyle titleItalicStyle =
     TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.normal, fontStyle: FontStyle.italic);
 final TextStyle hintInputStyle = TextStyle(fontSize: 18.0, color: Colors.white);
+final TextStyle userTitleStyle = TextStyle(fontSize: 10.0, color: Colors.pink);
