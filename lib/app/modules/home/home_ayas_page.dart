@@ -45,14 +45,40 @@ Widget _appBarWidget(HomeController ctl) {
         ),
         Obx(() => (ctl.isUserLogin)
             ? Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.end,
                 children: [_logoutButton(ctl), SizedBox(width: 10), Text(ctl.curUserId, style: userTitleStyle)],
               )
-            : _registerButton(ctl)),
+            : Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  _loginButton(ctl),
+                  Text(
+                    ' / ',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  _registerButton(ctl)
+                ],
+              )),
         //_icon(Icons.account_circle, color: ColorBranding.white, bgColor: ColorBranding.purpleLighter),
       ],
     ),
   );
+}
+
+Widget _loginButton(HomeController ctl) {
+  return FlatButton(
+      shape: RoundedRectangleBorder(
+          side: BorderSide(color: ColorBranding.orange, width: 1, style: BorderStyle.solid),
+          borderRadius: BorderRadius.circular(20)),
+      child: Text(
+        "Login",
+        style: GoogleFonts.abel(
+          fontSize: 12,
+          color: ColorBranding.white,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+      onPressed: () => ctl.openSignInPage());
 }
 
 Widget _registerButton(HomeController ctl) {
@@ -63,7 +89,7 @@ Widget _registerButton(HomeController ctl) {
       child: Text(
         "Register",
         style: GoogleFonts.abel(
-          fontSize: 14,
+          fontSize: 12,
           color: ColorBranding.white,
           fontWeight: FontWeight.w500,
         ),

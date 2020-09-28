@@ -46,8 +46,13 @@ class HomeController extends GetxController {
     Get.toNamed(Routes.SIGNUP);
   }
 
+  openSignInPage() {
+    Get.toNamed(Routes.SIGNIN);
+  }
+
   checkIsUserLogin() {
     if (box.hasData('cur_user_id') && (box.hasData('cur_user_token'))) {
+      //if (box.hasData('cur_user_token')) {
       this._isUserLogin.value = true;
       this._curUserId.value = box.read('cur_user_id');
     } else {

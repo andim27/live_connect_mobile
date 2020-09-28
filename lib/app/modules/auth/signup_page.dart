@@ -68,6 +68,9 @@ class SignUpPage extends StatelessWidget {
                           labelText: "Email",
                           fillColor: Colors.white,
                           hintStyle: hintInputStyle,
+                          labelStyle: TextStyle(
+                            color: Colors.white,
+                          ),
                         ),
                         controller: emailController,
                       ),
@@ -83,6 +86,9 @@ class SignUpPage extends StatelessWidget {
                           labelText: "Password",
                           fillColor: Colors.white,
                           hintStyle: hintInputStyle,
+                          labelStyle: TextStyle(
+                            color: Colors.white,
+                          ),
                         ),
                         obscureText: true,
                         controller: passwordController,

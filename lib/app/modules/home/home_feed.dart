@@ -124,7 +124,7 @@ class _HomeFeedState extends State<HomeFeed> {
         children: FakeData.movieList
             .map(
               (movie) => InkWell(
-                onTap: () => Get.to(RoomPage()),
+                onTap: () => Get.to(RoomPage(roomId: movie.id.toString())),
                 child: MovieCard(
                   movie: movie,
                   onSelected: (model) {
@@ -158,7 +158,7 @@ class _HomeFeedState extends State<HomeFeed> {
         children: FakeData.movieList
             .map(
               (movie) => InkWell(
-                onTap: () => Get.to(RoomPage()),
+                onTap: () => Get.to(RoomPage(roomId: movie.id.toString())),
                 child: HotRoomWidget(
                   movie: movie,
                   onSelected: (model) {

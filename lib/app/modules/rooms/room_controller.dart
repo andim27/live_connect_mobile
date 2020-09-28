@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:ayas_mobile/app/routes/app_routes.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:ayas_mobile/app/ui/app_colors.dart';
 import 'package:video_player/video_player.dart';
 import 'package:chewie/src/chewie_player.dart';
+import 'package:ayas_mobile/app/services/stream_srv.dart';
 
 class RoomController extends GetxController {
   final _version = ''.obs;
@@ -27,11 +29,17 @@ class RoomController extends GetxController {
   var _isLiveRoom = false.obs;
   get isLiveRoom => this._isLiveRoom.value;
 
+  var _isRoomConnected = false.obs;
+  get isRoomConnected => this._isRoomConnected.value;
+  var _roomId = ''.obs;
+  set roomId(value) => this._roomId.value;
+
   @override
   void onInit() {
     super.onInit();
     initVideoControllers();
     getActiveStreamUsers();
+    connectStreamRoom(this._roomId.value);
   }
 
   initVideoControllers() {
@@ -70,6 +78,20 @@ class RoomController extends GetxController {
     this._chewieController.value.dispose();
     this._videoPlayerController2.value.pause();
     Get.back();
+  }
+
+  Future<bool> connectStreamRoom(String roomId) async {
+    var viewers = await StreamService().connectStreamRooms(int.parse(roomId), true);
+    if (viewers.isEmpty) {
+      Get.snackbar(
+        "Error room:${roomId.toString()}",
+        "Error connect to room",
+        backgroundColor: ColorBranding.pink,
+        snackPosition: SnackPosition.TOP,
+      );
+    } else {
+      print('--------------------ROOM ${roomId.toString()} has ${viewers.length}');
+    }
   }
 
   getActiveStreamUsers() {

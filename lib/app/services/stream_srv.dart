@@ -51,6 +51,14 @@ class StreamService {
       if (data['token'] != null) {
         box.write('cur_user_token', data['token'].toString());
         print('API cur_user_token stored!');
+        if (data['id'] != null) {
+          box.write('cur_user_id', data['id'].toString());
+          print('API cur_user_id stored!');
+        } else {
+          print("API user_id Error id: ${data['id'].toString()}");
+          return false;
+        }
+        return true;
       } else {
         print("API token Error token: ${data['token'].toString()}");
       }
@@ -71,6 +79,7 @@ class StreamService {
         return data['viewers'];
       } else {
         print('API StreamRoom ERROR roomId:${roomId}');
+        return {};
       }
     } catch (e) {
       print("API stream Error: ${e.toString()}");

@@ -10,9 +10,10 @@ import 'package:ayas_mobile/app/ui/app_colors.dart';
 import 'package:ayas_mobile/app/modules/home/widgets/title_text.dart';
 
 class RoomPage extends StatefulWidget {
-  RoomPage({this.title = 'AYAS demo'});
+  RoomPage({this.title = 'AYAS demo', this.roomId});
 
   final String title;
+  final String roomId;
 
   @override
   State<StatefulWidget> createState() {
@@ -38,10 +39,11 @@ class _RoomPageState extends State<RoomPage> {
   @override
   Widget build(BuildContext context) {
     var chController = ctl.chewieController;
+    ctl.roomId = this.widget.roomId;
     return Scaffold(
       appBar: AppBar(
         leading: new IconButton(icon: new Icon(Icons.arrow_back), onPressed: () => ctl.backPage()),
-        title: Center(child: Text(' AYAS ')),
+        title: Center(child: Text(' AYAS room:' + this.widget.roomId)),
         backgroundColor: ColorBranding.purpleDarkest,
       ),
       body: Container(
@@ -101,28 +103,28 @@ class _RoomPageState extends State<RoomPage> {
                         child: FlatButton(
                           onPressed: () {
                             setState(() {
-                              ctl.playRoomVideo(1);
+                              ctl.playRoomVideo(int.parse(this.widget.roomId));
                             });
                           },
                           child: Padding(
-                            child: Text("Room-1", style: TextStyle(color: Colors.white)),
+                            child: Text("Room-" + this.widget.roomId, style: TextStyle(color: Colors.white)),
                             padding: EdgeInsets.symmetric(vertical: 16.0),
                           ),
                         ),
                       ),
-                      Expanded(
-                        child: FlatButton(
-                          onPressed: () {
-                            setState(() {
-                              ctl.playRoomVideo(2);
-                            });
-                          },
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(vertical: 16.0),
-                            child: Text("Room-2", style: TextStyle(color: Colors.white)),
-                          ),
-                        ),
-                      )
+                      // Expanded(
+                      //   child: FlatButton(
+                      //     onPressed: () {
+                      //       setState(() {
+                      //         ctl.playRoomVideo(2);
+                      //       });
+                      //     },
+                      //     child: Padding(
+                      //       padding: EdgeInsets.symmetric(vertical: 16.0),
+                      //       child: Text("Room-2", style: TextStyle(color: Colors.white)),
+                      //     ),
+                      //   ),
+                      // )
                     ],
                   ),
                 ]),
