@@ -73,12 +73,14 @@ class StreamService {
   Future<Map> connectStreamRooms(int roomId, bool watch) async {
     var data;
     try {
+      print('----API connectStreamRooms start------');
       data = await ApiClient().connectStreamRooms(roomId, watch);
       if ((data['id'] != null) && (data['viewers'] != null)) {
         print('API StreamRoom ${data['id']} connected!');
         return data['viewers'];
       } else {
         print('API StreamRoom ERROR roomId:${roomId}');
+        print('API StreamRoom ERROR data:${data.toString()}');
         return {};
       }
     } catch (e) {

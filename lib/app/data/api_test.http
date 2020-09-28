@@ -93,5 +93,7 @@ Content-Type: application/json
 
 
 ###----------------------- get Zoom JWT ----------
+@authToken = Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2MDEyOTE4NTYsIm5iZiI6MTYwMTI5MTg1NiwianRpIjoiN2M2MTE0NzctYzZiZC00ZDI5LTk3YTUtZjlhZmU5MDA3NDU3IiwiZXhwIjoxNjAxODk2NjU2LCJpZGVudGl0eSI6IjMiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.vrY2So48sb-jSGw_mSH4XosanXuYkP57B6kP-HXbIYA
+
 GET {{baseUrl}}/api/zoom-jwt HTTP/1.1
 Authorization: {{authToken}}

@@ -51,10 +51,11 @@ class RoomController extends GetxController {
       autoPlay: true,
       looping: true,
     );
-    print('-----------------------initVideoControllers----------');
+    print('-----------------------initVideoControllers----roomId:${this._roomId.value}------');
   }
 
   playRoomVideo(int nomer) {
+    connectStreamRoom(this._roomId.value);
     this._chewieController.value.dispose();
     this._videoPlayerController2.value.pause();
     this._videoPlayerController2.value.seekTo(Duration(seconds: 0));
@@ -76,9 +77,10 @@ class RoomController extends GetxController {
 
   backPage() {
     this._chewieController.value.dispose();
-    //this._videoPlayerController2.value.pause();
-    this._videoPlayerController1.value.dispose();
-    this._videoPlayerController2.value.dispose();
+    this._videoPlayerController1.value.pause();
+    this._videoPlayerController2.value.pause();
+    //this._videoPlayerController1.value.dispose();
+    //this._videoPlayerController2.value.dispose();
     Get.back();
   }
 

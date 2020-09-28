@@ -90,6 +90,12 @@ class _RoomPageState extends State<RoomPage> {
                             ),
                           ),
                         )),
+                  //--connected room----
+                  SizedBox(height: 10),
+                  (ctl.isRoomConnected)
+                      ? Icon(Icons.visibility, color: Colors.green)
+                      : Icon(Icons.visibility_off, color: Colors.redAccent),
+                  SizedBox(height: 10),
                   FlatButton(
                     onPressed: () {
                       ctl.openLiveRoom();
