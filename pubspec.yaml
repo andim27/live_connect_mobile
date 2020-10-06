@@ -40,6 +40,10 @@ dependencies:
   #flutter_facebook_login: ^3.0.0
   #google_sign_in: ^4.5.4
   validators: ^2.0.1
+  flutter_zoom_plugin:
+     git:
+        url: git://github.com/decodedhealth/flutter_zoom_plugin.git
+        ref: 0.0.8
 
 dev_dependencies:
   flutter_test:
