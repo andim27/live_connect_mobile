@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ayas_mobile/app/ui/app_colors.dart';
-import 'package:ayas_mobile/app/models/category.dart';
-import 'package:ayas_mobile/app/modules/home/widgets/title_text.dart';
-import 'package:ayas_mobile/app/modules/home/widgets/extensions.dart';
+import 'package:live_connect_mobile/app/ui/app_colors.dart';
+import 'package:live_connect_mobile/app/models/category.dart';
+import 'package:live_connect_mobile/app/modules/home/widgets/title_text.dart';
+import 'package:live_connect_mobile/app/modules/home/widgets/extensions.dart';
 
 class CategoryListWidget extends StatelessWidget {
   // final String imagePath;
@@ -30,9 +30,13 @@ class CategoryListWidget extends StatelessWidget {
                     ColorBranding.pinkLight,
                   ],
                 ),
-                color: model.isSelected ? ColorBranding.purpleDarkest : Colors.transparent,
+                color: model.isSelected
+                    ? ColorBranding.purpleDarkest
+                    : Colors.transparent,
                 border: Border.all(
-                  color: model.isSelected ? ColorBranding.pink : ColorBranding.orange,
+                  color: model.isSelected
+                      ? ColorBranding.pink
+                      : ColorBranding.orange,
                   width: model.isSelected ? 4 : 1,
                 ),
                 // boxShadow: <BoxShadow>[

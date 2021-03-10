@@ -1,5 +1,5 @@
-import 'package:ayas_mobile/app/models/category.dart';
-import 'package:ayas_mobile/app/models/movie.dart';
+import 'package:live_connect_mobile/app/models/category.dart';
+import 'package:live_connect_mobile/app/models/movie.dart';
 
 class FakeData {
   static List<Movie> movieList = [
@@ -22,7 +22,12 @@ class FakeData {
         extraInfo: "on HBO",
         image: 'assets/images/lostinterview.png',
         category: "Documentary"),
-    Movie(id: 2, name: 'The Flash', extraInfo: "on HBO", image: 'assets/images/the-flash.png', category: "TV-Series"),
+    Movie(
+        id: 2,
+        name: 'The Flash',
+        extraInfo: "on HBO",
+        image: 'assets/images/the-flash.png',
+        category: "TV-Series"),
     Movie(
         id: 1,
         name: 'Interstellar',

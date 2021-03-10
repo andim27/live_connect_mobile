@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
-import 'package:ayas_mobile/app/modules/rooms/room_controller.dart';
+import 'package:live_connect_mobile/app/modules/rooms/room_controller.dart';
 import 'package:chewie/chewie.dart';
 import 'package:chewie/src/chewie_player.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:video_player/video_player.dart';
-import 'package:ayas_mobile/app/ui/app_colors.dart';
-import 'package:ayas_mobile/app/modules/home/widgets/title_text.dart';
+import 'package:live_connect_mobile/app/ui/app_colors.dart';
+import 'package:live_connect_mobile/app/modules/home/widgets/title_text.dart';
 
 class RoomPage extends StatefulWidget {
   RoomPage({this.title = 'AYAS demo', this.roomId});
@@ -42,7 +42,8 @@ class _RoomPageState extends State<RoomPage> {
     ctl.roomId = this.widget.roomId;
     return Scaffold(
       appBar: AppBar(
-        leading: new IconButton(icon: new Icon(Icons.arrow_back), onPressed: () => ctl.backPage()),
+        leading: new IconButton(
+            icon: new Icon(Icons.arrow_back), onPressed: () => ctl.backPage()),
         title: Center(child: Text(' AYAS room:' + this.widget.roomId)),
         backgroundColor: ColorBranding.purpleDarkest,
       ),
@@ -113,7 +114,8 @@ class _RoomPageState extends State<RoomPage> {
                             });
                           },
                           child: Padding(
-                            child: Text("Room-" + this.widget.roomId, style: TextStyle(color: Colors.white)),
+                            child: Text("Room-" + this.widget.roomId,
+                                style: TextStyle(color: Colors.white)),
                             padding: EdgeInsets.symmetric(vertical: 16.0),
                           ),
                         ),

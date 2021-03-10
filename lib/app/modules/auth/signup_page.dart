@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
-import 'package:ayas_mobile/app/modules/auth/auth_streem_controller.dart';
-import 'package:ayas_mobile/app/ui/app_colors.dart';
-import 'package:ayas_mobile/app/ui/app_texts.dart';
+import 'package:live_connect_mobile/app/modules/auth/auth_streem_controller.dart';
+import 'package:live_connect_mobile/app/ui/app_colors.dart';
+import 'package:live_connect_mobile/app/ui/app_texts.dart';
 
 class SignUpPage extends StatelessWidget {
   AuthStreemController ctl = AuthStreemController();
@@ -100,8 +100,8 @@ class SignUpPage extends StatelessWidget {
                         color: Colors.white,
                         onPressed: () => (ctl.isProcessRegister == true)
                             ? null
-                            : ctl.registerUserStreemDB(
-                                nameController.text, emailController.text, passwordController.text),
+                            : ctl.registerUserStreemDB(nameController.text,
+                                emailController.text, passwordController.text),
                         child: Text("Sign Up"),
                       )
                     ],

@@ -1,9 +1,9 @@
-import 'package:ayas_mobile/app/routes/app_routes.dart';
+import 'package:live_connect_mobile/app/routes/app_routes.dart';
 import 'package:get/get.dart';
-import 'package:ayas_mobile/app/models/user.dart';
+import 'package:live_connect_mobile/app/models/user.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:ayas_mobile/app/services/stream_srv.dart';
-import 'package:ayas_mobile/app/ui/app_colors.dart';
+import 'package:live_connect_mobile/app/services/stream_srv.dart';
+import 'package:live_connect_mobile/app/ui/app_colors.dart';
 
 class AuthStreemController extends GetxController {
   final box = GetStorage();
@@ -55,7 +55,8 @@ class AuthStreemController extends GetxController {
         Get.toNamed(Routes.HOME_AYAS);
       });
     } else {
-      print('----------------(ERROR)Streem User Login--------:${res.toString()}-------');
+      print(
+          '----------------(ERROR)Streem User Login--------:${res.toString()}-------');
       this._isProcessRegister.value = false;
       Get.snackbar(
         "Error:",
@@ -86,7 +87,8 @@ class AuthStreemController extends GetxController {
         Get.toNamed(Routes.HOME_AYAS);
       });
     } else {
-      print('----------------(ERROR)Streem User Register-----:${res.toString()}-------');
+      print(
+          '----------------(ERROR)Streem User Register-----:${res.toString()}-------');
       this._isUserRegister.value = false;
       this._isProcessRegister.value = false;
       Get.snackbar(

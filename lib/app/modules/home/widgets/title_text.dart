@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ayas_mobile/app/ui/app_colors.dart';
+import 'package:live_connect_mobile/app/ui/app_colors.dart';
 
 class TitleText extends StatelessWidget {
   final String text;
@@ -10,7 +10,11 @@ class TitleText extends StatelessWidget {
   final FontWeight fontWeight;
 
   const TitleText(
-      {Key key, this.text, this.fontSize = 18, this.color = ColorBranding.white, this.fontWeight = FontWeight.w800})
+      {Key key,
+      this.text,
+      this.fontSize = 18,
+      this.color = ColorBranding.white,
+      this.fontWeight = FontWeight.w800})
       : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -22,7 +26,8 @@ class TitleText extends StatelessWidget {
           Text(text,
               // overflow: TextOverflow.ellipsis,
               maxLines: 3,
-              style: GoogleFonts.abel(fontSize: fontSize, fontWeight: fontWeight, color: color)),
+              style: GoogleFonts.abel(
+                  fontSize: fontSize, fontWeight: fontWeight, color: color)),
         ],
       ),
     );

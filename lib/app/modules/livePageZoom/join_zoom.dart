@@ -1,6 +1,6 @@
-import 'package:ayas_mobile/app/modules/auth/widgets/social_login_buttons.dart';
-import 'package:ayas_mobile/app/modules/livePageZoom/join_meeting_room.dart';
-import 'package:ayas_mobile/app/ui/app_colors.dart';
+import 'package:live_connect_mobile/app/modules/auth/widgets/social_login_buttons.dart';
+import 'package:live_connect_mobile/app/modules/livePageZoom/join_meeting_room.dart';
+import 'package:live_connect_mobile/app/ui/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class JoinZoom extends StatefulWidget {
@@ -102,7 +102,9 @@ class _JoinZoomState extends State<JoinZoom> {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) {
-          return JoinMeetingRoom(meetingId: meetingIdController.text, meetingPassword: meetingPasswordController.text);
+          return JoinMeetingRoom(
+              meetingId: meetingIdController.text,
+              meetingPassword: meetingPasswordController.text);
         },
       ),
     );

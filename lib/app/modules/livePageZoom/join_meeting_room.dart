@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:ayas_mobile/app/modules/livePageZoom/constants/api_keys.dart';
-import 'package:ayas_mobile/app/ui/app_colors.dart';
-import 'package:ayas_mobile/app/widgets/progress_indicator.dart';
+import 'package:live_connect_mobile/app/modules/livePageZoom/constants/api_keys.dart';
+import 'package:live_connect_mobile/app/ui/app_colors.dart';
+import 'package:live_connect_mobile/app/widgets/progress_indicator.dart';
 import 'package:flutter_zoom_plugin/zoom_view.dart';
 import 'package:flutter_zoom_plugin/zoom_options.dart';
 
@@ -37,7 +37,8 @@ class JoinMeetingRoom extends StatelessWidget {
     var result = false;
 
     if (Platform.isAndroid) {
-      result = status == "MEETING_STATUS_DISCONNECTING" || status == "MEETING_STATUS_FAILED";
+      result = status == "MEETING_STATUS_DISCONNECTING" ||
+          status == "MEETING_STATUS_FAILED";
       print("result in Meeting Room $result");
     } else {
       result = status == "MEETING_STATUS_IDLE";
@@ -70,7 +71,10 @@ class JoinMeetingRoom extends StatelessWidget {
 
               if (results[0] == 0) {
                 controller.zoomStatusEvents.listen((status) {
-                  print("Meeting Status Stream: " + status[0] + " - " + status[1]);
+                  print("Meeting Status Stream: " +
+                      status[0] +
+                      " - " +
+                      status[1]);
                   if (_isMeetingEnded(status[0])) {
                     Navigator.pop(context);
                     timer?.cancel();
@@ -79,10 +83,17 @@ class JoinMeetingRoom extends StatelessWidget {
 
                 print("listen on event channel");
 
-                controller.joinMeeting(this.meetingOptions).then((joinMeetingResult) {
+                controller
+                    .joinMeeting(this.meetingOptions)
+                    .then((joinMeetingResult) {
                   timer = Timer.periodic(new Duration(seconds: 2), (timer) {
-                    controller.meetingStatus(this.meetingOptions.meetingId).then((status) {
-                      print("Meeting Status Polling: " + status[0] + " - " + status[1]);
+                    controller
+                        .meetingStatus(this.meetingOptions.meetingId)
+                        .then((status) {
+                      print("Meeting Status Polling: " +
+                          status[0] +
+                          " - " +
+                          status[1]);
                     });
                   });
                 });

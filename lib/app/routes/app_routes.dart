@@ -1,16 +1,16 @@
 import 'package:get/get.dart';
-import 'package:ayas_mobile/app/modules/home/home_page.dart';
-import 'package:ayas_mobile/app/modules/home/home_ayas_page.dart';
-import 'package:ayas_mobile/app/modules/about/about_page.dart';
-import 'package:ayas_mobile/app/modules/rooms/room_page.dart';
-import 'package:ayas_mobile/app/modules/auth/signup_page.dart';
-import 'package:ayas_mobile/app/modules/auth/signin_page.dart';
-import 'package:ayas_mobile/app/modules/livePageZoom/live_page_zoom.dart';
-import 'package:ayas_mobile/app/modules/livePageZoom/join_zoom.dart';
-import 'package:ayas_mobile/app/modules/livePageZoom/start_meeting.dart';
-import 'package:ayas_mobile/app/modules/livePageZoom/start_meeting_page.dart';
-import 'package:ayas_mobile/app/modules/livePageZoom/join_meeting_room.dart';
-import 'package:ayas_mobile/app/modules/livePageZoom/no_login_meeting.dart';
+import 'package:live_connect_mobile/app/modules/home/home_page.dart';
+import 'package:live_connect_mobile/app/modules/home/home_ayas_page.dart';
+import 'package:live_connect_mobile/app/modules/about/about_page.dart';
+import 'package:live_connect_mobile/app/modules/rooms/room_page.dart';
+import 'package:live_connect_mobile/app/modules/auth/signup_page.dart';
+import 'package:live_connect_mobile/app/modules/auth/signin_page.dart';
+import 'package:live_connect_mobile/app/modules/livePageZoom/live_page_zoom.dart';
+import 'package:live_connect_mobile/app/modules/livePageZoom/join_zoom.dart';
+import 'package:live_connect_mobile/app/modules/livePageZoom/start_meeting.dart';
+import 'package:live_connect_mobile/app/modules/livePageZoom/start_meeting_page.dart';
+import 'package:live_connect_mobile/app/modules/livePageZoom/join_meeting_room.dart';
+import 'package:live_connect_mobile/app/modules/livePageZoom/no_login_meeting.dart';
 
 abstract class Routes {
   static const HOME = '/home';

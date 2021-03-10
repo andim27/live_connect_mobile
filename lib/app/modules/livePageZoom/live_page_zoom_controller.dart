@@ -1,4 +1,4 @@
-import 'package:ayas_mobile/app/models/live_page.dart';
+import 'package:live_connect_mobile/app/models/live_page.dart';
 import 'package:get/get.dart';
 
 class LivePageZoomController extends GetxController {

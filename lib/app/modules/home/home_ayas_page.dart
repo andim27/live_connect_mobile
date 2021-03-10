@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ayas_mobile/app/ui/app_colors.dart';
-import 'package:ayas_mobile/app/ui/app_texts.dart';
-import 'package:ayas_mobile/app/modules/home/home_feed.dart';
-import 'package:ayas_mobile/app/modules/home/widgets/title_text.dart';
-import 'package:ayas_mobile/app/modules/home/home_controller.dart';
+import 'package:live_connect_mobile/app/ui/app_colors.dart';
+import 'package:live_connect_mobile/app/ui/app_texts.dart';
+import 'package:live_connect_mobile/app/modules/home/home_feed.dart';
+import 'package:live_connect_mobile/app/modules/home/widgets/title_text.dart';
+import 'package:live_connect_mobile/app/modules/home/home_controller.dart';
 
 class HomeAyasPage extends StatefulWidget {
   HomeAyasPage({Key key}) : super(key: key);
@@ -14,7 +14,8 @@ class HomeAyasPage extends StatefulWidget {
   _HomeAyasPageState createState() => _HomeAyasPageState();
 }
 
-Widget _icon(IconData icon, {Color color = ColorBranding.orangeLight, Color bgColor}) {
+Widget _icon(IconData icon,
+    {Color color = ColorBranding.orangeLight, Color bgColor}) {
   return Container(
     padding: EdgeInsets.all(10),
     decoration: BoxDecoration(
@@ -36,7 +37,8 @@ Widget _appBarWidget(HomeController ctl) {
       children: <Widget>[
         RotatedBox(
           quarterTurns: 4,
-          child: _icon(Icons.sort, color: ColorBranding.white, bgColor: ColorBranding.purple),
+          child: _icon(Icons.sort,
+              color: ColorBranding.white, bgColor: ColorBranding.purple),
         ),
         TitleText(
           text: 'AYAS',
@@ -46,7 +48,11 @@ Widget _appBarWidget(HomeController ctl) {
         Obx(() => (ctl.isUserLogin)
             ? Row(
                 mainAxisAlignment: MainAxisAlignment.end,
-                children: [_logoutButton(ctl), SizedBox(width: 10), Text(ctl.curUserId, style: userTitleStyle)],
+                children: [
+                  _logoutButton(ctl),
+                  SizedBox(width: 10),
+                  Text(ctl.curUserId, style: userTitleStyle)
+                ],
               )
             : Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -68,7 +74,8 @@ Widget _appBarWidget(HomeController ctl) {
 Widget _loginButton(HomeController ctl) {
   return FlatButton(
       shape: RoundedRectangleBorder(
-          side: BorderSide(color: ColorBranding.orange, width: 1, style: BorderStyle.solid),
+          side: BorderSide(
+              color: ColorBranding.orange, width: 1, style: BorderStyle.solid),
           borderRadius: BorderRadius.circular(20)),
       child: Text(
         "Login",
@@ -84,7 +91,8 @@ Widget _loginButton(HomeController ctl) {
 Widget _registerButton(HomeController ctl) {
   return FlatButton(
       shape: RoundedRectangleBorder(
-          side: BorderSide(color: ColorBranding.orange, width: 1, style: BorderStyle.solid),
+          side: BorderSide(
+              color: ColorBranding.orange, width: 1, style: BorderStyle.solid),
           borderRadius: BorderRadius.circular(20)),
       child: Text(
         "Register",
@@ -100,7 +108,8 @@ Widget _registerButton(HomeController ctl) {
 Widget _logoutButton(HomeController ctl) {
   return FlatButton(
       shape: RoundedRectangleBorder(
-          side: BorderSide(color: ColorBranding.orange, width: 1, style: BorderStyle.solid),
+          side: BorderSide(
+              color: ColorBranding.orange, width: 1, style: BorderStyle.solid),
           borderRadius: BorderRadius.circular(20)),
       child: Text(
         "LogOut",

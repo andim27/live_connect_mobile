@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ayas_mobile/app/routes/app_routes.dart';
+import 'package:live_connect_mobile/app/routes/app_routes.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 

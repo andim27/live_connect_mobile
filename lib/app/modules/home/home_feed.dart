@@ -1,14 +1,14 @@
 import 'package:get/get.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:ayas_mobile/app/ui/app_colors.dart';
-import 'package:ayas_mobile/app/services/fake_data_movie_srv.dart';
-import 'package:ayas_mobile/app/modules/home/widgets/category_list.dart';
-import 'package:ayas_mobile/app/modules/home/widgets/extensions.dart';
-import 'package:ayas_mobile/app/modules/home/widgets/hot_room_widget.dart';
-import 'package:ayas_mobile/app/modules/home/widgets/movie_card.dart';
-import 'package:ayas_mobile/app/modules/home/widgets/title_text.dart';
-import 'package:ayas_mobile/app/modules/rooms/room_page.dart';
+import 'package:live_connect_mobile/app/ui/app_colors.dart';
+import 'package:live_connect_mobile/app/services/fake_data_movie_srv.dart';
+import 'package:live_connect_mobile/app/modules/home/widgets/category_list.dart';
+import 'package:live_connect_mobile/app/modules/home/widgets/extensions.dart';
+import 'package:live_connect_mobile/app/modules/home/widgets/hot_room_widget.dart';
+import 'package:live_connect_mobile/app/modules/home/widgets/movie_card.dart';
+import 'package:live_connect_mobile/app/modules/home/widgets/title_text.dart';
+import 'package:live_connect_mobile/app/modules/rooms/room_page.dart';
 
 class HomeFeed extends StatefulWidget {
   HomeFeed({Key key, this.title}) : super(key: key);
@@ -20,7 +20,8 @@ class HomeFeed extends StatefulWidget {
 }
 
 class _HomeFeedState extends State<HomeFeed> {
-  Widget _icon(IconData icon, {Color color = ColorBranding.orangeLight, Color bgColor}) {
+  Widget _icon(IconData icon,
+      {Color color = ColorBranding.orangeLight, Color bgColor}) {
     return Container(
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
@@ -47,9 +48,12 @@ class _HomeFeedState extends State<HomeFeed> {
           ),
           Spacer(),
           Container(
-            padding: EdgeInsets.only(top: 5.0, bottom: 5.0, left: 10.0, right: 15.0),
+            padding:
+                EdgeInsets.only(top: 5.0, bottom: 5.0, left: 10.0, right: 15.0),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(topLeft: Radius.circular(20), bottomLeft: Radius.circular(20)),
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(20),
+                  bottomLeft: Radius.circular(20)),
               gradient: LinearGradient(
                 begin: Alignment.centerLeft,
                 end: Alignment.centerRight,

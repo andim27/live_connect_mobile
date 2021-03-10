@@ -1,6 +1,6 @@
-import 'package:ayas_mobile/app/modules/home/home_controller.dart';
-import 'package:ayas_mobile/app/services/api_client_srv.dart';
-import 'package:ayas_mobile/app/ui/app_colors.dart';
+import 'package:live_connect_mobile/app/modules/home/home_controller.dart';
+import 'package:live_connect_mobile/app/services/api_client_srv.dart';
+import 'package:live_connect_mobile/app/ui/app_colors.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

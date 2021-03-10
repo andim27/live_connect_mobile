@@ -1,7 +1,7 @@
-import 'package:ayas_mobile/app/modules/auth/auth_controller.dart';
-import 'package:ayas_mobile/app/modules/auth/widgets/custom_textfieldform.dart';
-import 'package:ayas_mobile/app/modules/auth/widgets/social_login_buttons.dart';
-import 'package:ayas_mobile/app/ui/app_colors.dart';
+import 'package:live_connect_mobile/app/modules/auth/auth_controller.dart';
+import 'package:live_connect_mobile/app/modules/auth/widgets/custom_textfieldform.dart';
+import 'package:live_connect_mobile/app/modules/auth/widgets/social_login_buttons.dart';
+import 'package:live_connect_mobile/app/ui/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:validators/validators.dart' as validator;
@@ -40,7 +40,9 @@ class LoginForm extends GetWidget<AuthController> {
               suffixIcon: IconButton(
                 icon: Icon(
                   // Based on passwordVisible state choose the icon
-                  controller.passwordVisible.value ? Icons.visibility : Icons.visibility_off,
+                  controller.passwordVisible.value
+                      ? Icons.visibility
+                      : Icons.visibility_off,
                   color: ColorBranding.pink,
                 ),
                 onPressed: () {
@@ -62,7 +64,8 @@ class LoginForm extends GetWidget<AuthController> {
               },
             ),
             SocialLoginButtons(
-              onTap: () => controller.login(emailController.text, passwordController.text),
+              onTap: () => controller.login(
+                  emailController.text, passwordController.text),
               loginText: "Sign In",
               horizontalWidth: 5.0,
               verticalWidth: 15.0,

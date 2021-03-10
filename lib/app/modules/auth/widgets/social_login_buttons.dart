@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:ayas_mobile/app/ui/app_colors.dart';
+import 'package:live_connect_mobile/app/ui/app_colors.dart';
 
 class SocialLoginButtons extends StatelessWidget {
   final bool isSocial;
@@ -25,7 +25,8 @@ class SocialLoginButtons extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: horizontalWidth, vertical: verticalWidth),
+        margin: EdgeInsets.symmetric(
+            horizontal: horizontalWidth, vertical: verticalWidth),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(15)),
           boxShadow: <BoxShadow>[

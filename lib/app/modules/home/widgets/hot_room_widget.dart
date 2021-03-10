@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ayas_mobile/app/ui/app_colors.dart';
-import 'package:ayas_mobile/app/models/movie.dart';
-import 'package:ayas_mobile/app/modules/home/widgets/title_text.dart';
-import 'package:ayas_mobile/app/modules/home/widgets/extensions.dart';
+import 'package:live_connect_mobile/app/ui/app_colors.dart';
+import 'package:live_connect_mobile/app/models/movie.dart';
+import 'package:live_connect_mobile/app/modules/home/widgets/title_text.dart';
+import 'package:live_connect_mobile/app/modules/home/widgets/extensions.dart';
 
 class HotRoomWidget extends StatelessWidget {
   final Movie movie;
@@ -48,7 +48,10 @@ class HotRoomWidget extends StatelessWidget {
                     Text(movie.name,
                         // overflow: TextOverflow.ellipsis,
                         maxLines: 3,
-                        style: GoogleFonts.abel(fontSize: 16, fontWeight: FontWeight.bold, color: ColorBranding.white)),
+                        style: GoogleFonts.abel(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: ColorBranding.white)),
                   ],
                 ),
               ),
@@ -64,7 +67,10 @@ class HotRoomWidget extends StatelessWidget {
                     Text(movie.extraInfo,
                         // overflow: TextOverflow.ellipsis,
                         maxLines: 3,
-                        style: GoogleFonts.abel(fontSize: 26, fontWeight: FontWeight.bold, color: ColorBranding.white)),
+                        style: GoogleFonts.abel(
+                            fontSize: 26,
+                            fontWeight: FontWeight.bold,
+                            color: ColorBranding.white)),
                   ],
                 ),
               ),

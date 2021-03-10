@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ayas_mobile/app/ui/app_colors.dart';
-import 'package:ayas_mobile/app/models/movie.dart';
-import 'package:ayas_mobile/app/modules/home/widgets/title_text.dart';
-import 'package:ayas_mobile/app/modules/home/widgets/extensions.dart';
+import 'package:live_connect_mobile/app/ui/app_colors.dart';
+import 'package:live_connect_mobile/app/models/movie.dart';
+import 'package:live_connect_mobile/app/modules/home/widgets/title_text.dart';
+import 'package:live_connect_mobile/app/modules/home/widgets/extensions.dart';
 
 class MovieCard extends StatelessWidget {
   final Movie movie;

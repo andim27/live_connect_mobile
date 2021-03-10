@@ -1,5 +1,5 @@
-import 'package:ayas_mobile/app/models/user.dart';
-import 'package:ayas_mobile/app/services/api_client_srv.dart';
+import 'package:live_connect_mobile/app/models/user.dart';
+import 'package:live_connect_mobile/app/services/api_client_srv.dart';
 import 'package:get_storage/get_storage.dart';
 
 class StreamService {
@@ -22,7 +22,8 @@ class StreamService {
     try {
       String curUserEmail = box.read('cur_user_email');
       String curUserPassword = box.read('cur_user_password');
-      data = await ApiClient().registerStreamUser(curUserEmail, curUserPassword);
+      data =
+          await ApiClient().registerStreamUser(curUserEmail, curUserPassword);
       if (data['id'] != null) {
         print("---registerStreamUser cur_user_id=$data['id']");
         box.write('cur_user_id', data['id'].toString());

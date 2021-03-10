@@ -1,5 +1,5 @@
-import 'package:ayas_mobile/app/modules/home/home_controller.dart';
-import 'package:ayas_mobile/app/ui/app_colors.dart';
+import 'package:live_connect_mobile/app/modules/home/home_controller.dart';
+import 'package:live_connect_mobile/app/ui/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -10,7 +10,11 @@ class AuthHeader extends StatelessWidget {
   final String headerSmallTitle;
   final bool isLoginHeader;
 
-  AuthHeader({this.headerTitle, this.headerBigTitle, this.isLoginHeader, this.headerSmallTitle});
+  AuthHeader(
+      {this.headerTitle,
+      this.headerBigTitle,
+      this.isLoginHeader,
+      this.headerSmallTitle});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +39,9 @@ class AuthHeader extends StatelessWidget {
               ColorBranding.pink,
             ],
           ),
-          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(24), bottomRight: Radius.circular(24))),
+          borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(24),
+              bottomRight: Radius.circular(24))),
       padding: EdgeInsets.all(16),
       height: MediaQuery.of(context).size.height * 0.3,
       child: Stack(

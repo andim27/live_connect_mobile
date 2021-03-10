@@ -1,6 +1,6 @@
-import 'package:ayas_mobile/app/modules/auth/widgets/social_login_buttons.dart';
-import 'package:ayas_mobile/app/modules/livePageZoom/start_meeting.dart';
-import 'package:ayas_mobile/app/ui/app_colors.dart';
+import 'package:live_connect_mobile/app/modules/auth/widgets/social_login_buttons.dart';
+import 'package:live_connect_mobile/app/modules/livePageZoom/start_meeting.dart';
+import 'package:live_connect_mobile/app/ui/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class StartMeetingPage extends StatefulWidget {

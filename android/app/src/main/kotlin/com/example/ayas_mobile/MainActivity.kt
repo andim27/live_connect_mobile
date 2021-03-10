@@ -1,4 +1,4 @@
-package com.example.ayas_mobile
+package com.example.live_connect_mobile
 
 import io.flutter.embedding.android.FlutterActivity
 

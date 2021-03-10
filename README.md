@@ -1,4 +1,4 @@
-# ayas_mobile
+# live_connect_mobile
 
 Application for sharing video content.
 

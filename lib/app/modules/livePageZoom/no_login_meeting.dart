@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:ayas_mobile/app/modules/livePageZoom/constants/api_keys.dart';
-import 'package:ayas_mobile/app/modules/livePageZoom/live_page_zoom_controller.dart';
-import 'package:ayas_mobile/app/ui/app_colors.dart';
-import 'package:ayas_mobile/app/widgets/progress_indicator.dart';
+import 'package:live_connect_mobile/app/modules/livePageZoom/constants/api_keys.dart';
+import 'package:live_connect_mobile/app/modules/livePageZoom/live_page_zoom_controller.dart';
+import 'package:live_connect_mobile/app/ui/app_colors.dart';
+import 'package:live_connect_mobile/app/widgets/progress_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_plugin/zoom_options.dart';
 import 'package:flutter_zoom_plugin/zoom_view.dart';

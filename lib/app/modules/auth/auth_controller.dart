@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-import 'package:ayas_mobile/app/modules/auth/user_controller.dart';
-import 'package:ayas_mobile/app/models/user.dart';
-import 'package:ayas_mobile/app/services/firebase_db_srv.dart';
+import 'package:live_connect_mobile/app/modules/auth/user_controller.dart';
+import 'package:live_connect_mobile/app/models/user.dart';
+import 'package:live_connect_mobile/app/services/firebase_db_srv.dart';
 
 class AuthController extends GetxController {
   FirebaseAuth _auth = FirebaseAuth.instance;
@@ -17,7 +17,8 @@ class AuthController extends GetxController {
 
   void createUser(String name, String email, String password) async {
     try {
-      var _authResult = await _auth.createUserWithEmailAndPassword(email: email.trim(), password: password);
+      var _authResult = await _auth.createUserWithEmailAndPassword(
+          email: email.trim(), password: password);
       //create user in database.dart
       UserModel _user = UserModel(
         id: _authResult.user.uid,
@@ -39,8 +40,10 @@ class AuthController extends GetxController {
 
   void login(String email, String password) async {
     try {
-      var _authResult = await _auth.signInWithEmailAndPassword(email: email.trim(), password: password);
-      Get.find<UserController>().user = await Database().getUser(_authResult.user.uid);
+      var _authResult = await _auth.signInWithEmailAndPassword(
+          email: email.trim(), password: password);
+      Get.find<UserController>().user =
+          await Database().getUser(_authResult.user.uid);
     } catch (e) {
       Get.snackbar(
         "Error signing in",

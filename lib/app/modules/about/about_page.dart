@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ayas_mobile/app/modules/about/about_controller.dart';
-import 'package:ayas_mobile/app/ui/app_texts.dart';
+import 'package:live_connect_mobile/app/modules/about/about_controller.dart';
+import 'package:live_connect_mobile/app/ui/app_texts.dart';
 
 class AboutPage extends StatelessWidget {
   AboutController ctl = Get.put(AboutController());

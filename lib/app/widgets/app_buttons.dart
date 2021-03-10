@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:ayas_mobile/app/ui/app_texts.dart';
+import 'package:live_connect_mobile/app/ui/app_texts.dart';
 
 class AppButton extends StatelessWidget {
-  const AppButton({Key key, @required this.title, this.typeBtn, this.pageUrl, this.onPressFunc}) : super(key: key);
+  const AppButton(
+      {Key key,
+      @required this.title,
+      this.typeBtn,
+      this.pageUrl,
+      this.onPressFunc})
+      : super(key: key);
   final title;
   final String typeBtn;
   final String pageUrl;
@@ -49,7 +55,8 @@ class AppButton extends StatelessWidget {
     return Container(
       child: RaisedButton(
         onPressed: () => {openPage()},
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(30.0)),
         textColor: Colors.white,
         padding: const EdgeInsets.all(0.0),
         child: Container(

@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:ayas_mobile/app/models/user.dart';
+import 'package:live_connect_mobile/app/models/user.dart';
 
 class UserController extends GetxController {
   Rx<UserModel> _userModel = UserModel().obs;

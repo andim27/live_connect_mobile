@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:ayas_mobile/app/models/user.dart';
+import 'package:live_connect_mobile/app/models/user.dart';
 
 class Database {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -19,7 +19,8 @@ class Database {
 
   Future<UserModel> getUser(String uid) async {
     try {
-      DocumentSnapshot _doc = await _firestore.collection("users").doc(uid).get();
+      DocumentSnapshot _doc =
+          await _firestore.collection("users").doc(uid).get();
 
       return UserModel.fromDocumentSnapshot(documentSnapshot: _doc);
     } catch (e) {

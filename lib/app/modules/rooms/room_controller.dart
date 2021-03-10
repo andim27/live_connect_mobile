@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:ayas_mobile/app/routes/app_routes.dart';
+import 'package:live_connect_mobile/app/routes/app_routes.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-import 'package:ayas_mobile/app/ui/app_colors.dart';
+import 'package:live_connect_mobile/app/ui/app_colors.dart';
 import 'package:video_player/video_player.dart';
 import 'package:chewie/src/chewie_player.dart';
-import 'package:ayas_mobile/app/services/stream_srv.dart';
+import 'package:live_connect_mobile/app/services/stream_srv.dart';
 
 class RoomController extends GetxController {
   final _version = ''.obs;
