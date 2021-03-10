@@ -12,12 +12,19 @@ class RoomController extends GetxController {
   get version => this._version.value;
 
   Rx<TargetPlatform> _platform;
-  Rx<VideoPlayerController> _videoPlayerController1 = Rx<VideoPlayerController>();
-  Rx<VideoPlayerController> _videoPlayerController2 = Rx<VideoPlayerController>();
+  Rx<VideoPlayerController> _videoPlayerController1 =
+      Rx<VideoPlayerController>();
+  Rx<VideoPlayerController> _videoPlayerController2 =
+      Rx<VideoPlayerController>();
   Rx<ChewieController> _chewieController = Rx<ChewieController>();
-  final _video_0_url = "https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4".obs;
-  final _video_1_url = "http://35.198.180.32/hls/test-stream-1/index.m3u8".obs;
-  final _video_2_url = "http://35.198.180.32/hls/test-stream-2/index.m3u8".obs;
+  final site_url = "**.***.***.**";
+  final _video_0_url =
+      "https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4"
+          .obs;
+  final _video_1_url =
+      "http://" + site_url + "/hls/test-stream-1/index.m3u8".obs;
+  final _video_2_url =
+      "http://" + site_url + "/hls/test-stream-2/index.m3u8".obs;
 
   get videoPlayerController1 => this._videoPlayerController1.value;
   get videoPlayerController2 => this._videoPlayerController2.value;
@@ -43,15 +50,18 @@ class RoomController extends GetxController {
   }
 
   initVideoControllers() {
-    this._videoPlayerController1.value = VideoPlayerController.network(this._video_1_url.value);
-    this._videoPlayerController2.value = VideoPlayerController.network(this._video_2_url.value);
+    this._videoPlayerController1.value =
+        VideoPlayerController.network(this._video_1_url.value);
+    this._videoPlayerController2.value =
+        VideoPlayerController.network(this._video_2_url.value);
     this._chewieController.value = ChewieController(
       videoPlayerController: this._videoPlayerController1.value,
       aspectRatio: 3 / 2,
       autoPlay: true,
       looping: true,
     );
-    print('-----------------------initVideoControllers----roomId:${this._roomId.value}------');
+    print(
+        '-----------------------initVideoControllers----roomId:${this._roomId.value}------');
   }
 
   playRoomVideo(int nomer) {
@@ -60,7 +70,9 @@ class RoomController extends GetxController {
     this._videoPlayerController2.value.pause();
     this._videoPlayerController2.value.seekTo(Duration(seconds: 0));
     this._chewieController.value = ChewieController(
-      videoPlayerController: (nomer == 1) ? this._videoPlayerController1.value : this._videoPlayerController2.value,
+      videoPlayerController: (nomer == 1)
+          ? this._videoPlayerController1.value
+          : this._videoPlayerController2.value,
       aspectRatio: 3 / 2,
       autoPlay: true,
       looping: true,
@@ -85,7 +97,8 @@ class RoomController extends GetxController {
   }
 
   Future<bool> connectStreamRoom(String roomId) async {
-    var viewers = await StreamService().connectStreamRooms(int.parse(roomId), true);
+    var viewers =
+        await StreamService().connectStreamRooms(int.parse(roomId), true);
     if (viewers.isEmpty) {
       Get.snackbar(
         "Error room:${roomId.toString()}",
@@ -94,7 +107,8 @@ class RoomController extends GetxController {
         snackPosition: SnackPosition.TOP,
       );
     } else {
-      print('--------------------ROOM ${roomId.toString()} has ${viewers.length}');
+      print(
+          '--------------------ROOM ${roomId.toString()} has ${viewers.length}');
     }
   }
 

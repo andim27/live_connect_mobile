@@ -19,16 +19,20 @@ class NoLoginMeeting extends StatelessWidget {
   NoLoginMeeting({Key key, meetingId}) : super(key: key) {
     this.zoomOptions = new ZoomOptions(
       domain: "zoom.us",
-      appKey: APIKEYS.zoomApiKey, // Replace with with key got from the Zoom Marketplace
-      appSecret: APIKEYS.zoomApiSecret, // Replace with with key got from the Zoom Marketplace
+      appKey: APIKEYS
+          .zoomApiKey, // Replace with with key got from the Zoom Marketplace
+      appSecret: APIKEYS
+          .zoomApiSecret, // Replace with with key got from the Zoom Marketplace
     );
     this.meetingOptions = new ZoomMeetingOptions(
       userId: APIKEYS.zoomUserID, // Replace with the user email or Zoom user ID
-      displayName: 'AZ Ackmatoff',
+      displayName: 'First User',
       meetingId: "3192165749",
       // meetingPassword: "BTm6Q4",
-      zoomAccessToken: APIKEYS.zoomZAKtoken, // Replace with the token obtained from the Zoom API
-      zoomToken: APIKEYS.zoomUserToken, // Replace with the token obtained from the Zoom API
+      zoomAccessToken: APIKEYS
+          .zoomZAKtoken, // Replace with the token obtained from the Zoom API
+      zoomToken: APIKEYS
+          .zoomUserToken, // Replace with the token obtained from the Zoom API
       disableDialIn: "true",
       disableDrive: "true",
       disableInvite: "true",
@@ -42,14 +46,16 @@ class NoLoginMeeting extends StatelessWidget {
     var result = false;
 
     if (Platform.isAndroid)
-      result = status == "MEETING_STATUS_DISCONNECTING" || status == "MEETING_STATUS_FAILED";
+      result = status == "MEETING_STATUS_DISCONNECTING" ||
+          status == "MEETING_STATUS_FAILED";
     else
       result = status == "MEETING_STATUS_IDLE";
 
     return result;
   }
 
-  LivePageZoomController livePageZoomController = Get.put(LivePageZoomController());
+  LivePageZoomController livePageZoomController =
+      Get.put(LivePageZoomController());
 
   @override
   Widget build(BuildContext context) {
@@ -77,10 +83,14 @@ class NoLoginMeeting extends StatelessWidget {
                   controller.zoomStatusEvents.listen((status) {
                     if (status[1] == "No meeting is running") {
                       livePageZoomController.updateIsLiveBool(false);
-                      print("isLive FALSE: " + livePageZoomController.isLiveRx.value.toString());
+                      print("isLive FALSE: " +
+                          livePageZoomController.isLiveRx.value.toString());
                     }
 
-                    print("Meeting Status Stream: " + status[0] + " - " + status[1]);
+                    print("Meeting Status Stream: " +
+                        status[0] +
+                        " - " +
+                        status[1]);
                     if (_isMeetingEnded(status[0])) {
                       Navigator.pop(context);
                       timer?.cancel();
@@ -89,15 +99,23 @@ class NoLoginMeeting extends StatelessWidget {
 
                   print("listen on event channel");
 
-                  controller.startMeeting(this.meetingOptions).then((joinMeetingResult) {
+                  controller
+                      .startMeeting(this.meetingOptions)
+                      .then((joinMeetingResult) {
                     timer = Timer.periodic(new Duration(seconds: 2), (timer) {
-                      controller.meetingStatus(this.meetingOptions.meetingId).then((status) {
+                      controller
+                          .meetingStatus(this.meetingOptions.meetingId)
+                          .then((status) {
                         if (status[0] == "MEETING_STATUS_INMEETING") {
                           livePageZoomController.updateIsLiveBool(true);
-                          print("isLive TRUE: " + livePageZoomController.isLiveRx.value.toString());
+                          print("isLive TRUE: " +
+                              livePageZoomController.isLiveRx.value.toString());
                         }
 
-                        print("Meeting Status Polling: " + status[0] + " - " + status[1]);
+                        print("Meeting Status Polling: " +
+                            status[0] +
+                            " - " +
+                            status[1]);
                       });
                     });
                   });
